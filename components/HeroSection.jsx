@@ -3,6 +3,10 @@ import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
+import HeroTopLeft from '../assets/heroimgtopleft.jpg';
+import HeroTopRight from '../assets/heroimgtopright.jpg';
+import HeroBottomLeft from '../assets/heroimgbottomleft.jpg';
+import HeroBottomRight from '../assets/heroimgbottomright.jpg';
 
 const HeroSection = () => {
   return (
@@ -17,10 +21,10 @@ const HeroSection = () => {
             transition={{ duration: 0.6 }}
           >
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              Bridging Borders. Enriching Futures.
+              Campus to Continents — Learning Beyond Borders
             </h1>
             <p className="text-lg mb-8">
-              Join a globally connected academic journey with Medicaps University
+              Excel yourself for global opportunities with expert guidance from OIA Medicaps University
             </p>
             
             {/* Call to Action Buttons */}
@@ -53,7 +57,7 @@ const HeroSection = () => {
             <div className="grid grid-cols-2 gap-4">
               <div className="overflow-hidden rounded-xl">
                 <Image 
-                  src="/images/hero-1.jpg" 
+                  src={HeroTopLeft} 
                   alt="International students at campus" 
                   width={300} 
                   height={300} 
@@ -62,7 +66,7 @@ const HeroSection = () => {
               </div>
               <div className="overflow-hidden rounded-xl">
                 <Image 
-                  src="/images/hero-2.jpg" 
+                  src={HeroTopRight} 
                   alt="Global partnership signing ceremony" 
                   width={300} 
                   height={300} 
@@ -71,7 +75,7 @@ const HeroSection = () => {
               </div>
               <div className="overflow-hidden rounded-xl">
                 <Image 
-                  src="/images/hero-3.jpg" 
+                  src={HeroBottomLeft} 
                   alt="Award ceremony" 
                   width={300} 
                   height={300} 
@@ -80,7 +84,7 @@ const HeroSection = () => {
               </div>
               <div className="overflow-hidden rounded-xl">
                 <Image 
-                  src="/images/hero-4.jpg" 
+                  src={HeroBottomRight} 
                   alt="International faculty" 
                   width={300} 
                   height={300} 

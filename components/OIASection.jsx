@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import Image from 'next/image';
 import Link from 'next/link';
+import OIASectionImg from '../assets/oiasectionimg.jpg';
 
 const FeatureItem = ({ icon, title, description }) => {
   const [ref, inView] = useInView({
@@ -65,7 +66,7 @@ const OIASection = () => {
             Office of International Affairs
           </h2>
           <p className="text-gray-600 max-w-3xl mx-auto">
-            The OIA at Medicaps University aims to create opportunities for international academic exchanges, research collaborations and students mobility.
+            The Office of International Affairs (OIA) empowers Medicaps students and faculty to excel for global opportunities—building a community of like-minded peers, assisting you with expert guidance, and opening doors to collaborations that transcend campus borders.
           </p>
         </motion.div>
 
@@ -79,7 +80,7 @@ const OIASection = () => {
             transition={{ duration: 0.6 }}
           >
             <Image 
-              src="/images/oia-office.jpg" 
+              src={OIASectionImg}
               alt="OIA Office" 
               width={600} 
               height={400} 

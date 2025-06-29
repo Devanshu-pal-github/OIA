@@ -1,6 +1,7 @@
 'use client';
 import Link from 'next/link';
 import Image from 'next/image';
+import MedicapsLogo from '../assets/medicapslogo.jpg';
 
 const Footer = () => {
   return (
@@ -12,7 +13,7 @@ const Footer = () => {
           <div className="md:col-span-2">
             <div className="flex items-center mb-4">
               <Image 
-                src="/images/medicaps-footer-logo.png" 
+                src={MedicapsLogo} 
                 alt="Medicaps University" 
                 width={180} 
                 height={60} 

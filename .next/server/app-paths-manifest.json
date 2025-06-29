@@ -1,4 +1,9 @@
 {
   "/not-found": "app/not-found.js",
-  "/page": "app/page.js"
+  "/page": "app/page.js",
+  "/collaborations/page": "app/collaborations/page.js",
+  "/student-exchange/page": "app/student-exchange/page.js",
+  "/contact/page": "app/contact/page.js",
+  "/dual-degrees/page": "app/dual-degrees/page.js",
+  "/faculty-exchange/page": "app/faculty-exchange/page.js"
 }

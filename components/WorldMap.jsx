@@ -103,7 +103,7 @@ const WorldMap = () => {
               height: "auto",
             }}
           >
-            <Geographies geography="/world-110m.json">
+            <Geographies geography="https://raw.githubusercontent.com/deldersveld/topojson/master/world-countries.json">
               {({ geographies }) =>
                 geographies.map((geo) => {
                   const isHighlighted = highlightedCountries.includes(geo.id);

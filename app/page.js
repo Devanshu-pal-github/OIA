@@ -1,29 +1,19 @@
 'use client';
-import { useEffect } from 'react';
 import Header from '../components/Header';
 import HeroSection from '../components/HeroSection';
 import CategoriesSection from '../components/CategoriesSection';
 import OIASection from '../components/OIASection';
 import GlobalPrograms from '../components/GlobalPrograms';
-import WorldMap from '../components/WorldMap';
+import dynamic from 'next/dynamic';
+const WorldMap = dynamic(() => import('../components/WorldMap'), { ssr: false, loading: () => <div className="text-center py-10">Loading map...</div> });
 import StudentStories from '../components/StudentStories';
 import LatestUpdates from '../components/LatestUpdates';
+import LeadershipCarousel from '../components/LeadershipCarousel';
+import FormCTASection from '../components/FormCTASection';
 import CTASection from '../components/CTASection';
 import Footer from '../components/Footer';
 
 export default function Home() {
-  // Lazy load the world map JSON file
-  useEffect(() => {
-    const preloadMapData = async () => {
-      try {
-        await fetch('/world-110m.json');
-      } catch (error) {
-        console.error('Error preloading map data:', error);
-      }
-    };
-    
-    preloadMapData();
-  }, []);
 
   return (
     <main className="min-h-screen">
@@ -48,8 +38,14 @@ export default function Home() {
       {/* Student Stories */}
       <StudentStories />
 
+      {/* Leadership Carousel */}
+      <LeadershipCarousel />
+
       {/* Latest Updates */}
       <LatestUpdates />
+
+      {/* Form CTA Section */}
+      <FormCTASection />
 
       {/* CTA Section */}
       <CTASection />

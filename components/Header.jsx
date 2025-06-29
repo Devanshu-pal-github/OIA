@@ -2,7 +2,8 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-
+import OIALogo from '../assets/oialogo.jpg';
+import MedicapsLogo from '../assets/medicapslogo.jpg';
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   
@@ -18,7 +19,7 @@ const Header = () => {
           <Link href="/">
             <div className="flex items-center">
               <Image 
-                src="/images/medicaps-logo.png" 
+                src={MedicapsLogo} 
                 alt="Medicaps University" 
                 width={120} 
                 height={50} 
@@ -53,7 +54,7 @@ const Header = () => {
         {/* OIA Logo */}
         <div className="hidden md:block">
           <Image 
-            src="/images/oia-logo.png" 
+            src={OIALogo} 
             alt="OIA Logo" 
             width={60} 
             height={60} 
