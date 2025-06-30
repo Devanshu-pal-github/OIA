@@ -31,22 +31,22 @@ const Header = () => {
 
         {/* Navigation Links - Desktop */}
         <nav className="hidden md:flex items-center space-x-6">
-          <Link href="/" className="text-gray-800 hover:text-primary transition-colors">
+          <Link href="/" className="text-gray-800 hover:text-primary border-b-2 border-transparent hover:border-primary transition-all duration-300">
             Home
           </Link>
-          <Link href="/collaborations" className="text-gray-800 hover:text-primary transition-colors">
+          <Link href="/collaborations" className="text-gray-800 hover:text-primary border-b-2 border-transparent hover:border-primary transition-all duration-300">
             Collaborations
           </Link>
-          <Link href="/student-exchange" className="text-gray-800 hover:text-primary transition-colors">
+          <Link href="/student-exchange" className="text-gray-800 hover:text-primary border-b-2 border-transparent hover:border-primary transition-all duration-300">
             Student Exchange
           </Link>
-          <Link href="/dual-degrees" className="text-gray-800 hover:text-primary transition-colors">
+          <Link href="/dual-degrees" className="text-gray-800 hover:text-primary border-b-2 border-transparent hover:border-primary transition-all duration-300">
             Dual Degrees
           </Link>
-          <Link href="/faculty-exchange" className="text-gray-800 hover:text-primary transition-colors">
+          <Link href="/faculty-exchange" className="text-gray-800 hover:text-primary border-b-2 border-transparent hover:border-primary transition-all duration-300">
             Faculty Exchange
           </Link>
-          <Link href="/contact" className="text-gray-800 hover:text-primary transition-colors">
+          <Link href="/contact" className="text-gray-800 hover:text-primary border-b-2 border-transparent hover:border-primary transition-all duration-300">
             Contact
           </Link>
         </nav>
@@ -79,42 +79,42 @@ const Header = () => {
           <div className="flex flex-col space-y-3">
             <Link 
               href="/" 
-              className="text-gray-800 hover:text-primary transition-colors py-2"
+              className="text-gray-800 hover:text-primary border-b-2 border-transparent hover:border-primary transition-all duration-300 py-2"
               onClick={() => setIsMenuOpen(false)}
             >
               Home
             </Link>
             <Link 
               href="/collaborations" 
-              className="text-gray-800 hover:text-primary transition-colors py-2"
+              className="text-gray-800 hover:text-primary border-b-2 border-transparent hover:border-primary transition-all duration-300 py-2"
               onClick={() => setIsMenuOpen(false)}
             >
               Collaborations
             </Link>
             <Link 
               href="/student-exchange" 
-              className="text-gray-800 hover:text-primary transition-colors py-2"
+              className="text-gray-800 hover:text-primary border-b-2 border-transparent hover:border-primary transition-all duration-300 py-2"
               onClick={() => setIsMenuOpen(false)}
             >
               Student Exchange
             </Link>
             <Link 
               href="/dual-degrees" 
-              className="text-gray-800 hover:text-primary transition-colors py-2"
+              className="text-gray-800 hover:text-primary border-b-2 border-transparent hover:border-primary transition-all duration-300 py-2"
               onClick={() => setIsMenuOpen(false)}
             >
               Dual Degrees
             </Link>
             <Link 
               href="/faculty-exchange" 
-              className="text-gray-800 hover:text-primary transition-colors py-2"
+              className="text-gray-800 hover:text-primary border-b-2 border-transparent hover:border-primary transition-all duration-300 py-2"
               onClick={() => setIsMenuOpen(false)}
             >
               Faculty Exchange
             </Link>
             <Link 
               href="/contact" 
-              className="text-gray-800 hover:text-primary transition-colors py-2"
+              className="text-gray-800 hover:text-primary border-b-2 border-transparent hover:border-primary transition-all duration-300 py-2"
               onClick={() => setIsMenuOpen(false)}
             >
               Contact
