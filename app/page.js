@@ -11,6 +11,7 @@ import LatestUpdates from '../components/LatestUpdates';
 import LeadershipCarousel from '../components/LeadershipCarousel';
 
 import CTASection from '../components/CTASection';
+import LogoMarquee from '../components/LogoMarquee';
 import Footer from '../components/Footer';
 
 export default function Home() {
@@ -43,6 +44,9 @@ export default function Home() {
 
       {/* Latest Updates */}
       <LatestUpdates />
+
+      {/* Partner Logos Strip */}
+      <LogoMarquee />
 
       {/* CTA Section */}
       <CTASection />

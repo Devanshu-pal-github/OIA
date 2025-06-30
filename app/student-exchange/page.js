@@ -1,5 +1,6 @@
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import ExchangeProfiles from '../../components/ExchangeProfiles';
 
 export const metadata = {
   title: 'Student Exchange | Office of International Affairs - Medicaps University',
@@ -12,11 +13,8 @@ export default function StudentExchangePage() {
       {/* Header */}
       <Header />
 
-      {/* Placeholder Content */}
-      <section className="container mx-auto py-20 text-center">
-        <h1 className="text-4xl font-semibold mb-4">Student Exchange</h1>
-        <p className="text-gray-600">Content coming soon.</p>
-      </section>
+      {/* Exchange Profiles */}
+      <ExchangeProfiles />
 
       {/* Footer */}
       <Footer />

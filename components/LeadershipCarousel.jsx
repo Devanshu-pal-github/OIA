@@ -13,7 +13,7 @@ const leaders = [
   {
     name: 'Prof. (Dr.) P. Siluvainathan',
     role: 'Registrar',
-    image: '/images/leadership/registrar.jpg',
+    image: '/assets/registrarimg.jpg',
     message: 'We provide seamless administrative support to help you venture beyond borders.'
   },
   {

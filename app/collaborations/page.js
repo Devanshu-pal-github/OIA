@@ -1,5 +1,6 @@
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import CollaborationsSection from '../../components/CollaborationsSection';
 
 export const metadata = {
   title: 'Collaborations | Office of International Affairs - Medicaps University',
@@ -12,11 +13,18 @@ export default function CollaborationsPage() {
       {/* Header */}
       <Header />
 
-      {/* Placeholder Content */}
-      <section className="container mx-auto py-20 text-center">
-        <h1 className="text-4xl font-semibold mb-4">Collaborations</h1>
-        <p className="text-gray-600">Content coming soon.</p>
+      {/* Hero Intro */}
+      <section className="bg-gradient-to-r from-primary/90 to-secondary/80 py-24 text-center text-white">
+        <div className="container mx-auto px-4">
+          <h1 className="text-5xl font-bold mb-4">Our Global Collaborations</h1>
+          <p className="max-w-3xl mx-auto text-lg opacity-90">
+            Medicaps University partners with world-class institutions to provide students and faculty with unparalleled international opportunities.
+          </p>
+        </div>
       </section>
+
+      {/* Collaborations Grid */}
+      <CollaborationsSection />
 
       {/* Footer */}
       <Footer />
