@@ -9,7 +9,7 @@ const WorldMap = dynamic(() => import('../components/WorldMap'), { ssr: false, l
 import StudentStories from '../components/StudentStories';
 import LatestUpdates from '../components/LatestUpdates';
 import LeadershipCarousel from '../components/LeadershipCarousel';
-import FormCTASection from '../components/FormCTASection';
+
 import CTASection from '../components/CTASection';
 import Footer from '../components/Footer';
 
@@ -35,17 +35,14 @@ export default function Home() {
       {/* World Map */}
       <WorldMap />
 
-      {/* Student Stories */}
-      <StudentStories />
-
       {/* Leadership Carousel */}
       <LeadershipCarousel />
 
+      {/* Student Stories */}
+      <StudentStories />
+
       {/* Latest Updates */}
       <LatestUpdates />
-
-      {/* Form CTA Section */}
-      <FormCTASection />
 
       {/* CTA Section */}
       <CTASection />

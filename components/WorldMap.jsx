@@ -1,38 +1,58 @@
-'use client';
-import { useState } from 'react';
-import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
-import dynamic from 'next/dynamic';
-import CountUp from 'react-countup';
+"use client";
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import dynamic from "next/dynamic";
+import CountUp from "react-countup";
 
 // Import the map components dynamically to avoid SSR issues
 const ComposableMap = dynamic(
-  () => import('react-simple-maps').then((mod) => mod.ComposableMap),
+  () => import("react-simple-maps").then((mod) => mod.ComposableMap),
   { ssr: false }
 );
 
 const Geographies = dynamic(
-  () => import('react-simple-maps').then((mod) => mod.Geographies),
+  () => import("react-simple-maps").then((mod) => mod.Geographies),
   { ssr: false }
 );
 
 const Geography = dynamic(
-  () => import('react-simple-maps').then((mod) => mod.Geography),
+  () => import("react-simple-maps").then((mod) => mod.Geography),
   { ssr: false }
 );
 
 // Partner countries data
 const partnerCountries = [
-  'USA', 'Canada', 'United Kingdom', 'France', 'Germany', 'Spain', 'Russia', 'China', 
-  'Japan', 'South Korea', 'Australia', 'India'
+  "USA",
+  "Canada",
+  "United Kingdom",
+  "France",
+  "Germany",
+  "Spain",
+  "Russia",
+  "China",
+  "Japan",
+  "South Korea",
+  "Australia",
+  "India",
 ];
 
 // Countries highlighted in red on the map (country codes)
-const highlightedCountries = [
-  'USA', 'CAN', 'GBR', 'FRA', 'DEU', 'ESP', 'RUS', 'CHN', 'JPN', 'KOR', 'AUS', 'IND'
+// ISO 3-letter codes for countries we want to highlight
+const highlightedCountryCodes = ["USA", "FRA", "JPN", "KOR", "MYS", "TWN", "IND"];
+
+// Country names (as present in the TopoJSON) for fallback highlighting
+const highlightedCountryNames = [
+  "United States of America",
+  "France",
+  "Japan",
+  "South Korea",
+  "Malaysia",
+  "Taiwan",
+  "India"
 ];
 
-const StatCard = ({ count, title, color = 'text-primary' }) => {
+const StatCard = ({ count, title, color = "text-primary" }) => {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
@@ -59,7 +79,7 @@ const StatCard = ({ count, title, color = 'text-primary' }) => {
 };
 
 const WorldMap = () => {
-  const [tooltipContent, setTooltipContent] = useState('');
+  const [tooltipContent, setTooltipContent] = useState("");
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
@@ -68,7 +88,7 @@ const WorldMap = () => {
   const [tooltipPosition, setTooltipPosition] = useState({ x: 0, y: 0 });
 
   return (
-    <section className="py-16 bg-white">
+    <section className="pt-16 pb-4 bg-white">
       <div className="container mx-auto">
         <motion.div
           ref={ref}
@@ -77,9 +97,12 @@ const WorldMap = () => {
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">Our Global Reach</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
+            Our Global Reach
+          </h2>
           <p className="text-gray-600 max-w-3xl mx-auto">
-            Discover our expanding network of international academic partnerships across the globe.
+            Discover our expanding network of international academic
+            partnerships across the globe.
           </p>
         </motion.div>
 
@@ -103,10 +126,18 @@ const WorldMap = () => {
               height: "auto",
             }}
           >
-            <Geographies geography="https://raw.githubusercontent.com/deldersveld/topojson/master/world-countries.json">
+            <Geographies geography="https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json">
               {({ geographies }) =>
                 geographies.map((geo) => {
-                  const isHighlighted = highlightedCountries.includes(geo.id);
+                  const isoA3 =
+                    geo.properties &&
+                    (geo.properties.ISO_A3 || geo.properties.iso_a3);
+                  const name = geo.properties && geo.properties.name;
+                  const isHighlighted =
+                    highlightedCountryCodes.includes(isoA3) ||
+                    highlightedCountryNames.includes(name);
+                  // Skip Antarctica
+                  if (isoA3 === "ATA" || name === "Antarctica") return null;
                   return (
                     <Geography
                       key={geo.rsmKey}
@@ -147,7 +178,7 @@ const WorldMap = () => {
               style={{
                 left: `${tooltipPosition.x + 15}px`,
                 top: `${tooltipPosition.y - 35}px`,
-                transform: 'translate(-50%, -100%)',
+                transform: "translate(-50%, -100%)",
               }}
             >
               {tooltipContent}
@@ -156,9 +187,17 @@ const WorldMap = () => {
         </motion.div>
 
         {/* Stats Section */}
-        <div className="grid grid-cols-3 gap-6 mt-12">
-          <StatCard count={7} title="Partner Countries" color="text-purple-600" />
-          <StatCard count={25} title="Exchange Students" color="text-blue-600" />
+        <div className="grid grid-cols-3 gap-6 mt-2">
+          <StatCard
+            count={6}
+            title="Partner Countries"
+            color="text-purple-600"
+          />
+          <StatCard
+            count={25}
+            title="Exchange Students"
+            color="text-blue-600"
+          />
           <StatCard count={12} title="MOUs Signed" color="text-red-600" />
         </div>
       </div>
@@ -166,4 +205,4 @@ const WorldMap = () => {
   );
 };
 
-export default WorldMap; 
+export default WorldMap;

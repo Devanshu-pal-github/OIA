@@ -5,25 +5,19 @@ import Image from 'next/image';
 
 const leaders = [
   {
-    name: 'Prof. (Dr.) ABC',
+    name: 'Prof. D. K. Patnaik',
     role: 'Vice-Chancellor',
     image: '/images/leadership/vc.jpg',
     message: 'At OIA we encourage our students and faculty to broaden their horizons and embrace global perspectives.'
   },
   {
-    name: 'Prof. (Dr.) DEF',
-    role: 'Pro Vice-Chancellor',
-    image: '/images/leadership/pvc.jpg',
-    message: 'International collaboration is the cornerstone of innovation and excellence at Medicaps University.'
-  },
-  {
-    name: 'Shri GHI',
+    name: 'Prof. (Dr.) P. Siluvainathan',
     role: 'Registrar',
     image: '/images/leadership/registrar.jpg',
     message: 'We provide seamless administrative support to help you venture beyond borders.'
   },
   {
-    name: 'Prof. (Dr.) JKL',
+    name: 'Dr. Ravindra Pathak',
     role: 'Head – Office of International Affairs',
     image: '/images/leadership/oia-head.jpg',
     message: 'Join our globally minded community and excel yourself for international opportunities.'

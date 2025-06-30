@@ -10,15 +10,20 @@ const CTASection = () => {
     threshold: 0.1,
   });
 
-  // Partner logos
+  // Key partner universities to display
   const partners = [
-    { name: "NTU Singapore", logo: "/images/partners/ntu-logo.png" },
-    { name: "LMU Germany", logo: "/images/partners/lmu-logo.png" },
-    { name: "OIA", logo: "/images/partners/oia-logo.png" },
-    { name: "Telkom University", logo: "/images/partners/telkom-logo.png" },
-    { name: "OMNES Education", logo: "/images/partners/omnes-logo.png" },
-    { name: "Tamayoz", logo: "/images/partners/tamayoz-logo.png" },
-    { name: "DPU", logo: "/images/partners/dpu-logo.png" }
+    'Woosong University, South Korea',
+    'INTI International University, Malaysia',
+    'TAR UMT University, Malaysia',
+    'City University of Seattle, USA',
+    'DPU, Thailand',
+    'Southern Methodist University (SMU), USA',
+    'Aivancity University, France',
+    'LIGMR University',
+    'National Taipei University of Technology, Taiwan',
+    'Asia University, Taiwan',
+    'Lunghwa University, Taiwan',
+    'Cheng Shiu University, Taiwan',
   ];
 
   return (
@@ -35,6 +40,15 @@ const CTASection = () => {
             Ready to Take Off with OIA Medicaps?
           </h2>
           <div className="flex flex-wrap justify-center gap-4 mt-8">
+            {/* Fill Form Button */}
+            <a
+              href="https://forms.gle/your-form" // TODO: replace with real link
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-white text-primary px-6 py-3 rounded-md hover:bg-gray-100 transition-all duration-300 font-medium"
+            >
+              Fill the Form
+            </a>
             <Link href="/contact">
               <button className="bg-white text-primary px-6 py-3 rounded-md hover:bg-gray-100 transition-all duration-300 font-medium">
                 Contact OIA Office
@@ -55,21 +69,16 @@ const CTASection = () => {
           transition={{ duration: 0.8, delay: 0.3 }}
           className="mt-16"
         >
-          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 text-center">
             {partners.map((partner, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 10 }}
                 animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
-                transition={{ duration: 0.3, delay: 0.1 * index }}
-                className="w-24 h-16 relative grayscale hover:grayscale-0 transition-all duration-300"
+                transition={{ duration: 0.3, delay: 0.05 * index }}
+                className="text-white text-sm md:text-base font-medium"
               >
-                <Image
-                  src={partner.logo}
-                  alt={partner.name}
-                  fill
-                  className="object-contain"
-                />
+                {partner}
               </motion.div>
             ))}
           </div>
