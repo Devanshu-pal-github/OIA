@@ -1,6 +1,6 @@
 {
   "/not-found": "app/not-found.js",
-  "/collaborations/page": "app/collaborations/page.js",
   "/page": "app/page.js",
-  "/student-exchange/page": "app/student-exchange/page.js"
+  "/student-exchange/page": "app/student-exchange/page.js",
+  "/collaborations/page": "app/collaborations/page.js"
 }

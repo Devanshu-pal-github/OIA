@@ -100,7 +100,7 @@ const LatestUpdates = () => {
   // Sample news data
   const news = [
     {
-      image: "/images/news1.jpg",
+      image: "/eventsAndNews/japanmeeting.jpg",
       date: "January 22, 2024",
       title: "Japanese Delegation Visits Medicaps to Discuss Future Collaborations",
       description: "A high-level delegation from Japan visited Medicaps University to explore research and academic exchange opportunities.",
@@ -108,7 +108,7 @@ const LatestUpdates = () => {
       link: "/news/japanese-delegation"
     },
     {
-      image: "/images/news2.jpg",
+      image: "/eventsAndNews/medicapsjoinsinternationaledu.jpg",
       date: "February 15, 2024",
       title: "Medicaps University Joins International Education Consortium",
       description: "Medicaps has been accepted into the prestigious global consortium of universities focused on international mobility and research.",
@@ -116,7 +116,7 @@ const LatestUpdates = () => {
       link: "/news/consortium"
     },
     {
-      image: "/images/news3.jpg",
+      image: "/eventsAndNews/discussionofindianedu.jpg",
       date: "January 10, 2024",
       title: "Assistant Director Vasudev Krishna of Northumbria University Discusses Indian Education",
       description: "An insightful presentation on opportunities for Indian students in UK education system.",

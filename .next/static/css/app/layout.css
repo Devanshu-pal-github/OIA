@@ -768,6 +768,12 @@ video {
 .min-w-\[60px\] {
   min-width: 60px;
 }
+.min-w-\[260px\] {
+  min-width: 260px;
+}
+.min-w-\[340px\] {
+  min-width: 340px;
+}
 .max-w-2xl {
   max-width: 42rem;
 }
@@ -896,6 +902,9 @@ video {
 .overflow-hidden {
   overflow: hidden;
 }
+.overflow-x-auto {
+  overflow-x: auto;
+}
 .overflow-y-auto {
   overflow-y: auto;
 }
@@ -1017,6 +1026,9 @@ video {
 .p-8 {
   padding: 2rem;
 }
+.p-4 {
+  padding: 1rem;
+}
 .px-2 {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
@@ -1119,6 +1131,10 @@ video {
 .text-xs {
   font-size: 0.75rem;
   line-height: 1rem;
+}
+.text-base {
+  font-size: 1rem;
+  line-height: 1.5rem;
 }
 .font-bold {
   font-weight: 700;
@@ -1392,6 +1408,10 @@ video {
 
   .md\:flex {
     display: flex;
+  }
+
+  .md\:grid {
+    display: grid;
   }
 
   .md\:hidden {
