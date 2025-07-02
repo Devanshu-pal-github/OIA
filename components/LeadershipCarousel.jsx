@@ -7,35 +7,35 @@ const leaders = [
   {
     name: "Prof. D. K. Patnaik",
     role: "Vice-Chancellor",
-    image: "/teachersimg/vcimg.jpg",
+    image: "/teachersImg/vcimg.jpg",
     message:
       "At OIA we encourage our students and faculty to broaden their horizons and embrace global perspectives.",
   },
   {
     name: "Prof. (Dr.) P. Siluvainathan",
     role: "Registrar",
-    image: "/teachersimg/registrarimg.jpg",
+    image: "/teachersImg/registrarimg.jpg",
     message:
       "We provide seamless administrative support to help you venture beyond borders.",
   },
   {
     name: "Mr. Palash Garg",
     role: "OSD to Chancellor",
-    image: "/teachersimg/OSDtochancellorimg.jpg",
+    image: "/teachersImg/OSDtochancellorimg.jpg",
     message:
       "We are committed to supporting the Chancellor's vision and ensuring excellence in all university affairs.",
   },
   {
     name: "Prof. (Dr.) Birajashis Pattnaik",
     role: "Pro Vice Chancellor",
-    image: "/teachersimg/provcimg.jpg",
+    image: "/teachersImg/provcimg.jpg",
     message:
       "We strive to foster innovation and academic growth across all disciplines at the university.",
   },
   {
     name: "Dr. Ravindra Pathak",
     role: "Head – Office of International Affairs",
-    image: "/teachersimg/ravindrasirimg.jpg",
+    image: "/teachersImg/ravindrasirimg.jpg",
     message:
       "Join our globally minded community and excel yourself for international opportunities.",
   },
@@ -73,14 +73,17 @@ const LeadershipCarousel = () => {
               transition={{ duration: 0.5 }}
               className="bg-white p-8 rounded-xl shadow-md flex flex-col items-center"
             >
-              <div className="w-32 h-32 rounded-full overflow-hidden mb-4 relative">
-                <Image
+              <div className="w-32 h-32 rounded-full overflow-hidden mb-4 relative bg-gray-200 border-2 border-primary flex items-center justify-center">
+                <img
                   src={leader.image}
                   alt={leader.name}
+                  className="object-cover w-32 h-32"
                   width={128}
                   height={128}
-                  className="object-cover w-32 h-32"
-                  priority
+                  onError={(e) => {
+                    e.target.onerror = null;
+                    e.target.src = '/university-logos/oialogo.jpg'; // fallback logo if image fails
+                  }}
                 />
               </div>
               <h3 className="text-xl font-semibold text-primary mb-1">
