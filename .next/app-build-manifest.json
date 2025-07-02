@@ -21,10 +21,20 @@
       "static/chunks/main-app.js",
       "static/chunks/app/collaborations/page.js"
     ],
-    "/not-found": [
+    "/dual-degrees/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/not-found.js"
+      "static/chunks/app/dual-degrees/page.js"
+    ],
+    "/faculty-exchange/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/faculty-exchange/page.js"
+    ],
+    "/contact/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/contact/page.js"
     ]
   }
 }
