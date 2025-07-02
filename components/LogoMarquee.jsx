@@ -6,18 +6,19 @@ import Image from 'next/image';
 // Just drop new logo files in that folder and add the filename below – no further code changes required.
 
 const logos = [
-  'woosong.png',
-  'inti.png',
-  'tarumt.png',
-  'cityu.png',
-  'dpu.png',
-  'smu.png',
-  'aivancity.png',
-  'ligmr.png',
-  'ntut.png',
-  'asia.png',
-  'lunghwa.png',
-  'chengshiu.png',
+  'asiauniversity.jpg',
+  'avicenneprivatebuisnessschoolimg.jpg',
+  'chengshiuuniimg.jpg',
+  'cityuniofseattleimg.jpg',
+  'mahsauniimg.jpg',
+  'nationalchishauniimg.jpg',
+  'nationalkaohsiunguniofscienceandtechimg.jpg',
+  'northeasternuniimg.jpg',
+  'smuimg.jpg',
+  'staffordshireuniimg.jpg',
+  'synergyunidubaiimg.jpg',
+  'telkomuniimg.jpg',
+  'woosonguniimg.jpg',
 ];
 
 const LogoMarquee = () => {

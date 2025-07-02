@@ -71,6 +71,7 @@ const Card = ({ student }) => {
 
 const ExchangeProfiles = () => {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
+  const [selectedImage, setSelectedImage] = useState(null);
   return (
     <section className="py-16 bg-gray-50">
       <div className="container mx-auto">
