@@ -597,6 +597,9 @@ video {
 .top-1\/2 {
   top: 50%;
 }
+.-bottom-1 {
+  bottom: -0.25rem;
+}
 .z-50 {
   z-index: 50;
 }
@@ -721,6 +724,12 @@ video {
 }
 .h-full {
   height: 100%;
+}
+.h-0\.5 {
+  height: 0.125rem;
+}
+.h-56 {
+  height: 14rem;
 }
 .max-h-\[90vh\] {
   max-height: 90vh;
@@ -931,6 +940,9 @@ video {
 }
 .border-2 {
   border-width: 2px;
+}
+.border {
+  border-width: 1px;
 }
 .border-b {
   border-bottom-width: 1px;
@@ -1270,6 +1282,9 @@ video {
 .duration-500 {
   transition-duration: 500ms;
 }
+.duration-200 {
+  transition-duration: 200ms;
+}
 
 /* Custom animations */
 @keyframes fadeInUp {
@@ -1332,6 +1347,10 @@ video {
 .hover\:bg-white:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
+}
+
+.hover\:bg-primary\/10:hover {
+  background-color: rgb(78 42 132 / 0.1);
 }
 
 .hover\:text-gray-300:hover {

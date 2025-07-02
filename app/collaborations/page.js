@@ -1,5 +1,4 @@
-import Header from '../../components/Header';
-import Footer from '../../components/Footer';
+// ...existing code...
 import CollaborationsSection from '../../components/CollaborationsSection';
 
 export const metadata = {
@@ -10,9 +9,6 @@ export const metadata = {
 export default function CollaborationsPage() {
   return (
     <main className="min-h-screen">
-      {/* Header */}
-      <Header />
-
       {/* Hero Intro */}
       <section className="bg-gradient-to-r from-primary/90 to-secondary/80 py-24 text-center text-white">
         <div className="container mx-auto px-4">
@@ -22,12 +18,8 @@ export default function CollaborationsPage() {
           </p>
         </div>
       </section>
-
       {/* Collaborations Grid */}
       <CollaborationsSection />
-
-      {/* Footer */}
-      <Footer />
     </main>
   );
 }

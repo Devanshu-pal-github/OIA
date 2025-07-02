@@ -2,8 +2,7 @@
 "use client";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import Header from "../../components/Header";
-import Footer from "../../components/Footer";
+// ...existing code...
 
 // List of student exchange moment images
 const exchangeMoments = [
@@ -11,46 +10,46 @@ const exchangeMoments = [
     image: "/studentExchangeAndMoments/studentexchang(inti11).jpg",
     alt: "Student Exchange INTI 11"
   },
-  {
-    image: "/studentExchangeAndMoments/studentexchange(inti).jpg",
-    alt: "Student Exchange INTI"
-  },
+  // {
+  //   image: "/studentExchangeAndMoments/studentexchange(inti).jpg",
+  //   alt: "Student Exchange INTI"
+  // },
   {
     image: "/studentExchangeAndMoments/studentexchange(inti10).jpg",
     alt: "Student Exchange INTI 10"
   },
-  {
-    image: "/studentExchangeAndMoments/studentexchange(inti2).jpg",
-    alt: "Student Exchange INTI 2"
-  },
-  {
-    image: "/studentExchangeAndMoments/studentexchange(inti3).jpg",
-    alt: "Student Exchange INTI 3"
-  },
-  {
-    image: "/studentExchangeAndMoments/studentexchange(inti4).jpg",
-    alt: "Student Exchange INTI 4"
-  },
+  // {
+  //   image: "/studentExchangeAndMoments/studentexchange(inti2).jpg",
+  //   alt: "Student Exchange INTI 2"
+  // },
+  // {
+  //   image: "/studentExchangeAndMoments/studentexchange(inti3).jpg",
+  //   alt: "Student Exchange INTI 3"
+  // },
+  // {
+  //   image: "/studentExchangeAndMoments/studentexchange(inti4).jpg",
+  //   alt: "Student Exchange INTI 4"
+  // },
   {
     image: "/studentExchangeAndMoments/studentexchange(inti5).jpg",
     alt: "Student Exchange INTI 5"
   },
-  {
-    image: "/studentExchangeAndMoments/studentexchange(inti6).jpg",
-    alt: "Student Exchange INTI 6"
-  },
-  {
-    image: "/studentExchangeAndMoments/studentexchange(inti7).jpg",
-    alt: "Student Exchange INTI 7"
-  },
+  // {
+  //   image: "/studentExchangeAndMoments/studentexchange(inti6).jpg",
+  //   alt: "Student Exchange INTI 6"
+  // },
+  // {
+  //   image: "/studentExchangeAndMoments/studentexchange(inti7).jpg",
+  //   alt: "Student Exchange INTI 7"
+  // },
   {
     image: "/studentExchangeAndMoments/studentexchange(inti8).jpg",
     alt: "Student Exchange INTI 8"
   },
-  {
-    image: "/studentExchangeAndMoments/studentexchange(inti9).jpg",
-    alt: "Student Exchange INTI 9"
-  },
+  // {
+  //   image: "/studentExchangeAndMoments/studentexchange(inti9).jpg",
+  //   alt: "Student Exchange INTI 9"
+  // },
   {
     image: "/studentExchangeAndMoments/studentexchange(japan).jpg",
     alt: "Student Exchange Japan"
@@ -76,7 +75,6 @@ const exchangeMoments = [
 export default function StudentExchangePage() {
   return (
     <main className="min-h-screen bg-white">
-      <Header />
       <section className="py-16">
         <div className="container mx-auto">
           <h2 className="text-3xl font-bold text-center text-primary mb-10">Student Exchange Moments</h2>
@@ -132,7 +130,6 @@ export default function StudentExchangePage() {
           </div>
         </div>
       </section>
-      <Footer />
     </main>
   );
 }

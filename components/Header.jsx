@@ -1,12 +1,13 @@
 'use client';
 import { useState } from 'react';
+import { usePathname } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
 import OIALogo from '../assets/oialogo.jpg';
 import MedicapsLogo from '../assets/medicapslogo.jpg';
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  
+  const pathname = usePathname();
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
@@ -31,23 +32,77 @@ const Header = () => {
 
         {/* Navigation Links - Desktop */}
         <nav className="hidden md:flex items-center space-x-6">
-          <Link href="/" className="text-gray-800 hover:text-primary border-b-2 border-transparent hover:border-primary transition-all duration-300">
+          <Link
+            href="/"
+            className={`relative px-2 py-1 text-gray-800 transition-all duration-200
+              hover:text-primary
+              ${pathname === '/' ? 'text-primary font-semibold' : ''}
+            `}
+          >
             Home
+            {pathname === '/' && (
+              <span className="absolute left-0 right-0 -bottom-1 h-0.5 bg-primary rounded transition-all duration-300"></span>
+            )}
           </Link>
-          <Link href="/collaborations" className="text-gray-800 hover:text-primary border-b-2 border-transparent hover:border-primary transition-all duration-300">
+          <Link
+            href="/collaborations"
+            className={`relative px-2 py-1 text-gray-800 transition-all duration-200
+              hover:text-primary
+              ${pathname === '/collaborations' ? 'text-primary font-semibold' : ''}
+            `}
+          >
             Collaborations
+            {pathname === '/collaborations' && (
+              <span className="absolute left-0 right-0 -bottom-1 h-0.5 bg-primary rounded transition-all duration-300"></span>
+            )}
           </Link>
-          <Link href="/student-exchange" className="text-gray-800 hover:text-primary border-b-2 border-transparent hover:border-primary transition-all duration-300">
+          <Link
+            href="/student-exchange"
+            className={`relative px-2 py-1 text-gray-800 transition-all duration-200
+              hover:text-primary
+              ${pathname === '/student-exchange' ? 'text-primary font-semibold' : ''}
+            `}
+          >
             Student Exchange
+            {pathname === '/student-exchange' && (
+              <span className="absolute left-0 right-0 -bottom-1 h-0.5 bg-primary rounded transition-all duration-300"></span>
+            )}
           </Link>
-          <Link href="/dual-degrees" className="text-gray-800 hover:text-primary border-b-2 border-transparent hover:border-primary transition-all duration-300">
+          <Link
+            href="/dual-degrees"
+            className={`relative px-2 py-1 text-gray-800 transition-all duration-200
+              hover:text-primary
+              ${pathname === '/dual-degrees' ? 'text-primary font-semibold' : ''}
+            `}
+          >
             Dual Degrees
+            {pathname === '/dual-degrees' && (
+              <span className="absolute left-0 right-0 -bottom-1 h-0.5 bg-primary rounded transition-all duration-300"></span>
+            )}
           </Link>
-          <Link href="/faculty-exchange" className="text-gray-800 hover:text-primary border-b-2 border-transparent hover:border-primary transition-all duration-300">
+          <Link
+            href="/faculty-exchange"
+            className={`relative px-2 py-1 text-gray-800 transition-all duration-200
+              hover:text-primary
+              ${pathname === '/faculty-exchange' ? 'text-primary font-semibold' : ''}
+            `}
+          >
             Faculty Exchange
+            {pathname === '/faculty-exchange' && (
+              <span className="absolute left-0 right-0 -bottom-1 h-0.5 bg-primary rounded transition-all duration-300"></span>
+            )}
           </Link>
-          <Link href="/contact" className="text-gray-800 hover:text-primary border-b-2 border-transparent hover:border-primary transition-all duration-300">
+          <Link
+            href="/contact"
+            className={`relative px-2 py-1 text-gray-800 transition-all duration-200
+              hover:text-primary
+              ${pathname === '/contact' ? 'text-primary font-semibold' : ''}
+            `}
+          >
             Contact
+            {pathname === '/contact' && (
+              <span className="absolute left-0 right-0 -bottom-1 h-0.5 bg-primary rounded transition-all duration-300"></span>
+            )}
           </Link>
         </nav>
 
@@ -77,48 +132,26 @@ const Header = () => {
       {isMenuOpen && (
         <nav className="md:hidden bg-white py-4 px-4 shadow-lg">
           <div className="flex flex-col space-y-3">
-            <Link 
-              href="/" 
-              className="text-gray-800 hover:text-primary border-b-2 border-transparent hover:border-primary transition-all duration-300 py-2"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Home
-            </Link>
-            <Link 
-              href="/collaborations" 
-              className="text-gray-800 hover:text-primary border-b-2 border-transparent hover:border-primary transition-all duration-300 py-2"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Collaborations
-            </Link>
-            <Link 
-              href="/student-exchange" 
-              className="text-gray-800 hover:text-primary border-b-2 border-transparent hover:border-primary transition-all duration-300 py-2"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Student Exchange
-            </Link>
-            <Link 
-              href="/dual-degrees" 
-              className="text-gray-800 hover:text-primary border-b-2 border-transparent hover:border-primary transition-all duration-300 py-2"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Dual Degrees
-            </Link>
-            <Link 
-              href="/faculty-exchange" 
-              className="text-gray-800 hover:text-primary border-b-2 border-transparent hover:border-primary transition-all duration-300 py-2"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Faculty Exchange
-            </Link>
-            <Link 
-              href="/contact" 
-              className="text-gray-800 hover:text-primary border-b-2 border-transparent hover:border-primary transition-all duration-300 py-2"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Contact
-            </Link>
+            {[
+              { href: '/', label: 'Home' },
+              { href: '/collaborations', label: 'Collaborations' },
+              { href: '/student-exchange', label: 'Student Exchange' },
+              { href: '/dual-degrees', label: 'Dual Degrees' },
+              { href: '/faculty-exchange', label: 'Faculty Exchange' },
+              { href: '/contact', label: 'Contact' },
+            ].map(({ href, label }) => (
+              <Link
+                key={href}
+                href={href}
+                className={`relative px-2 py-2 text-gray-800 transition-all duration-200 rounded hover:bg-primary/10 hover:text-primary ${pathname === href ? 'text-primary font-semibold bg-primary/10' : ''}`}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {label}
+                {pathname === href && (
+                  <span className="absolute left-0 right-0 -bottom-1 h-0.5 bg-primary rounded transition-all duration-300"></span>
+                )}
+              </Link>
+            ))}
           </div>
         </nav>
       )}
